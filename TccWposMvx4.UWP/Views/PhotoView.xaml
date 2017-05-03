@@ -1,0 +1,29 @@
+﻿<views:MvxWindowsPage
+    x:Class="TccWposMvx4.UWP.Views.PhotoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:TccWposMvx4.UWP.Views"
+    xmlns:views="using:MvvmCross.WindowsUWP.Views"
+    mc:Ignorable="d">
+
+  <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+      </Grid.RowDefinitions>
+      <StackPanel Grid.Row="0">
+        <Button Content="Get Photo" Command="{Binding GetPhotoCommand}"></Button>
+        <Button Content="Select Photo" Command="{Binding SelectPhotoCommand}"></Button>
+      </StackPanel>
+      <Image Source="{Binding Bytes, Converter={StaticResource InMemoryImage}}" Margin="-1,0,1,0" Grid.Row="1"/>
+    </Grid>
+  </Grid>
+</views:MvxWindowsPage>
